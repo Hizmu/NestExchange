@@ -1,5 +1,5 @@
 # NestExchange
-Created application based on c++ and mongodb (mongoc).
+  Created application based on c++ and mongodb (mongoc).
 The Nest Exchange can register new and authentication users, and buy fiat and crypto. it is also possible to add new features.
 it's only the alpha version, it has no tests and has not been tested on windows yet. it has a connection to the database and registration of new accounts. 
 # Pre-reqs
