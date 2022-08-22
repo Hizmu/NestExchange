@@ -9,7 +9,7 @@ To build and run this app locally you will need a few things:
 #Getting started
 - Clone the repository
 ```
-> $ git clone https://github.com/Hizmu/NestExchange
+$ git clone https://github.com/Hizmu/NestExchange
 ```
 - Compiled 
 ```
