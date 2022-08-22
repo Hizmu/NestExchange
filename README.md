@@ -18,4 +18,4 @@ $ cmake .. && make -j
 ```
 # Platforms
 - Linux
-- Windows64
+- Windows 64
