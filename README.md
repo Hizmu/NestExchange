@@ -16,6 +16,6 @@ $ git clone https://github.com/Hizmu/NestExchange
 $ cd NestExchange && mkdir build && cd build
 $ cmake .. && make -j
 ```
-#Platforms
+# Platforms
 - Linux
 - Windows64
