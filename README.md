@@ -8,7 +8,9 @@ To build and run this app locally you will need a few things:
 - Install  [Mongo C Driver](http://mongoc.org/).
 #Getting started
 - Clone the repository
+```
 > $ git clone https://github.com/Hizmu/NestExchange
+```
 - Compiled 
 ```
 $ cd NestExchange && mkdir build && cd build
