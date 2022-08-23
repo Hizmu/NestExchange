@@ -6,6 +6,7 @@ it's only the alpha version, it has no tests and has not been tested on windows 
 To build and run this app locally you will need a few things:
 - Install [MongoDB](https://www.mongodb.com/).
 - Install [Mongo C Driver](http://mongoc.org/). 
+- Install [Boost](https://www.boost.org/).
 # Getting started
 - Clone the repository
 ```
