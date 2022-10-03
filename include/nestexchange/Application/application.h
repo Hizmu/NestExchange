@@ -1,13 +1,10 @@
 #ifndef _APPLICATION_
 #define _APPLICATION_
-#include "../core.h"
-#include "../Account/accountmanager.h"
-#include "../Database/client.h"
-#include "../LogManager/LogManager.h"
-#include "../LogManager/log.h"
-#include <memory>
-#include <iostream>
-#include <string>
+#include "nestexchange/core.h"
+#include "nestexchange/Account/accountmanager.h"
+#include "nestexchange/Database/client.h"
+#include "nestexchange/LogManager/LogManager.h"
+#include "nestexchange/LogManager/log.h"
 
 
 namespace NestExchange {

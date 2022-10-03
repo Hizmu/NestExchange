@@ -3,7 +3,6 @@
 #define _CONNECTION_EXEPTION_
 
 #include "../core.h"
-#include <mongoc/mongoc.h>
 #include <boost/format.hpp>
 
 class ConnectionException : public std::exception

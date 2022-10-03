@@ -29,6 +29,7 @@
 #include <string>
 #include <string_view>
 #include <bson/bson.h>
+#include <algorithm>
 #include <mongoc/mongoc.h>
 #include <sstream>
 #include <memory.h>
@@ -36,3 +37,5 @@
 #include <spdlog/spdlog.h>
 #include <variant>
 #include <optional>
+#include <boost/json.hpp>
+#include "nestexchange/LogManager/log.h"

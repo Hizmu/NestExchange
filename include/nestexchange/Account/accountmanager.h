@@ -2,12 +2,9 @@
 #define _ACCOUNT_MANAGER_
 
 #include "accountdata.h"
-
-
-#include <memory>
+#include "bson.h"
 #include <nestexchange/Database/client.h>
 
-#include <string>
 
 namespace NestExchange {
 		class AccountManager{
@@ -22,10 +19,10 @@ namespace NestExchange {
 
 				void Registration(AccountData&& data,std::string paswd);
 				void Registration(Login&& login, Email&& email,PhoneNumber&& phone, std::string&&  paswd);
-				void SignIn(AccountData&& data);
-				void SignIn(Login&& login,std::string && passwd);
-				void FindAccount();
+				void SignIn(Login& login,std::string & passwd);
+				Bson FindAccount(const Login login);
 				void SetCollection(std::shared_ptr<Collection> other);
+				
 			private:
 				std::shared_ptr<Collection> collection;	
 				Bson CreateRegistrationBson(AccountData& data, std::string passwd);

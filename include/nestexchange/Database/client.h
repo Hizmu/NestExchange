@@ -19,7 +19,7 @@ class Client : public DBComponent
 		const char* GetName()const override;
 		[[nodiscard]]std::shared_ptr<Database> GetDatabase(const std::string&& databaseName)noexcept;
 		[[nodiscard]]std::shared_ptr<Collection>GetCollection(std::shared_ptr<Database> db, const std::string&& collectionName)noexcept;
-		void Connection() ;
+		void Connection();	
 	private:
 		mongoc_uri_t* CreateUri()noexcept ;
 		mongoc_client_t* CreateClient(mongoc_uri_t * uri) ;

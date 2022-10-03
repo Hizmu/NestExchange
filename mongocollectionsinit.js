@@ -1,4 +1,4 @@
-// execute command - " mongosh < mongocollectionsinit.js "
+// execute command - " mongosh < mongocollectionsinit.js " or "mongo < mongocollectionsinit.js"
 use NestDB
 db.account.drop()
 db.createCollection("account",{
@@ -29,9 +29,9 @@ db.createCollection("account",{
 				},
 				password:{
 					bsonType: "string",
-					minimum: 8,
-					maximum: 16,
-					description: "password - It is required and it must be a string with length between 8 and 16"
+					minimum: 32,
+					maximum: 32,
+					description: "password - It is required and it must be a string hash with length 32"
 				},
 				registrationdate:{bsonType:"date",description:"It must be a date, is required"},
 				lastlogindate:{bsonType:"date",description:"It must be a date, is required"}
@@ -46,6 +46,6 @@ db.account.createIndex({login: 1, email:1,mobile:1},{unique:true})
  * db.account.insertOne({login:"test",
 	email:"test@test.com",
 	mobile:"123456789",
-	password:"123456789",
+	password:"15e2b0d3c33891ebb0f1ef609ec419420c20e320ce94c65fbc8c3312448eb225",
 	registrationdate: new ISODate(),
 	lastlogindate: new ISODate()})*/

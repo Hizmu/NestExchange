@@ -1,6 +1,5 @@
 #include "log.h"
 #include "LogManager.h"
-#include <memory>
 #include <spdlog/spdlog.h>
 #include <spdlog/sinks/stdout_color_sinks.h>
 #include <vector>

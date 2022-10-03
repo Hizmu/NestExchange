@@ -1,7 +1,6 @@
 #ifndef NEST_COLLECTION_
 #define NEST_COLLECTION_
 #include "../core.h"
-#include <nestexchange/LogManager/log.h>
 #include "bson.h"
 #include "dbcomponent.h"
 namespace NestExchange{
@@ -15,15 +14,22 @@ namespace NestExchange{
 			 ~Collection()override;
 		public:
 			
-			void InsertOne(const Bson* document);
+			bool InsertOne(const Bson* document);
+			Bson Find(const Bson* filter);
+			Bson Find(const std::string filter);
+			Bson Find(const Bson* filter, const Bson* options);
+			Bson Find(const std::string filter, const std::string options);
 			const char* GetName()const override {
 				return _collectionName.c_str();
 			}
-
+			
+			std::string GetError()const;
+			
 		private:
+				
 			std::optional<mongoc_collection_t*> _collection;
 			std::string _collectionName;
-
+			bson_error_t _error;
 			friend Collection* operator<<(Collection* collection, const Bson& document);
 	};
 

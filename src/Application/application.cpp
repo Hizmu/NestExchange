@@ -1,14 +1,7 @@
 #include "application.h"
-#include <exception>
-#include <math.h>
-#include <memory>
-#include <string>
-
+#include <iostream>
 #include "../config.hpp"
-#include "nestexchange/Account/accountdata.h"
 #include "nestexchange/Account/accountmanager.h"
-#include "nestexchange/LogManager/log.h"
-
 
 namespace NestExchange {
 
@@ -35,10 +28,13 @@ void Application::Sign()
 	cin >> pass;
 	NEST_INFO("Connection to NestDB");
 	_client->Connection();
-;
+	
 	NEST_INFO("Connection to Account");
-
-		
+	std::shared_ptr<Database> _db = _client->GetDatabase("NestDB");
+	std::shared_ptr<Collection> _account = _client->GetCollection(_db,"account");
+	_manager = std::shared_ptr<AccountManager>(new AccountManager(_account));
+	_manager->SignIn(log,pass);
+	
 }
 void Application::Registaration(){
 	string log{};
@@ -59,7 +55,16 @@ void Application::Registaration(){
 	NEST_INFO("Connection to Account");
 
 	NEST_INFO("Registaration");
+	_client->Connection();
+	std::shared_ptr<Database> db = _client->GetDatabase("NestDB");
+	NEST_INFO("Connection to Account");
+	std::shared_ptr<Collection> account = _client->GetCollection(db,"account");
+	_manager = std::shared_ptr<AccountManager>(new AccountManager(account));
+	NEST_INFO("Registaration");
 	AccountData data(log,email,mobile);
+	_manager->Registration(std::move(data),pass);
+	NEST_INFO("REGISTRATION OK");
+
 }
 void Application::TestRegistration()
 {
@@ -106,6 +111,9 @@ int Application::exec(){
 		switch (_loginSelector) {
 			case LoginSelector::NONE:
 				continue;
+			case LoginSelector::SIGN:
+				Sign();
+				break;
 			case LoginSelector::REGISTRATION:
 				Registaration();	
 				break;

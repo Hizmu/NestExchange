@@ -1,7 +1,5 @@
 #include "database.h"
 
-#include <optional>
-
 namespace NestExchange
 {
 

@@ -2,8 +2,6 @@
 #include "connectionexception.h"
 #include "../LogManager/log.h"
 #include "database.h"
-#include <memory>
-#include <optional>
 namespace NestExchange {
 
 	Client::Client(const std::string_view& conn )noexcept:_connectString(std::move(conn))

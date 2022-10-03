@@ -3,9 +3,6 @@
 #define NEST_DATABASE_
 
 #include "../core.h"
-#include <optional>
-#include <string>
-#include <nestexchange/LogManager/log.h>
 #include "dbcomponent.h"
 namespace NestExchange 
 {
